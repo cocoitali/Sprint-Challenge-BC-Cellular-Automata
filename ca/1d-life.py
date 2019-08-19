@@ -1,6 +1,9 @@
 import pygame, random
 
 def get_new_value(old_gen, old_automata):
+
+    west = i -1
+    east = i + 1
     # TBC - add code to generate the next row of cells,
     # then replace the return statement below to
     # return the updated automata
