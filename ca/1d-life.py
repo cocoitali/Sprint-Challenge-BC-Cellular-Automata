@@ -1,13 +1,23 @@
 import pygame, random
 
 def get_new_value(old_gen, old_automata):
-    new_automata = old_automata[:]
-    west = i -1
-    east = i + 1
     # TBC - add code to generate the next row of cells,
+    new_automata = old_automata[:]
+    oa = old_automata
+    na = new_automata
+    
+    for i in range(len(oa) - SQ_NUM):
+        west = i -1
+        east = i + 1
+        sum = oa[west] + oa[east] + oa[i]
+        if sum == 0 or sum == 3:
+            na[i + SQ_NUM] = 0
+        else:
+            na[i + SQ_NUM] = 1
+                
     # then replace the return statement below to
     # return the updated automata
-    return new_automata
+    return na
 
 # Define some colors and other constants
 BLACK = (0, 0, 0)
